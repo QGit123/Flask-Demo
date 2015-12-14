@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, redirect
-import pandas
+from bokeh.plotting import figure
+from bokeh.embed import components
 import Quandl
 import time
 import datetime
-from bokeh.plotting import figure
-from bokeh.embed import components
 
 app_lulu = Flask(__name__)
 
