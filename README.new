@@ -6,4 +6,8 @@ Check app_run.py for the code used:
   *No stock symbol and/or no price selected
   *Stock symbol can't be found in the Quandl Wiki Dataset
 
+Known issues on Heroku: 
+  *Graphs sometime do not update immediately
+  *Known stock symbols occasionally produce no symbol found error
+
 Jeff Ouyang, 12/13/2015
