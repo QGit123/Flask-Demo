@@ -22,6 +22,7 @@ app_lulu.err_msg=''
 app_lulu.script=''
 app_lulu.div=''
 app_lulu.price_cnt=0
+app_lulu.time_delta = datetime.timedelta(days=-31)
 
 @app_lulu.route('/')
 def main_entry():
@@ -36,12 +37,6 @@ def main_input():
         app_lulu.vars['stock'] = request.form.get('stock_symbol',None)
         app_lulu.vars['price'] = request.form.getlist('prices',None)
         app_lulu.price_cnt = len(app_lulu.vars['price'])        
-
-        #if app_lulu.vars['stock'] != None and app_lulu.price_cnt > 0:
-        #    f = open('%s.txt'%(app_lulu.vars['stock']),'w')
-	#    for i in range(app_lulu.price_cnt):
-	#	f.write('%s\n'%(app_lulu.vars['price'][i]))
-        #    f.close() 
         
         return redirect('/graph_decision') 
 
@@ -49,9 +44,9 @@ def main_input():
 def decision():
     if app_lulu.vars['stock'] != None and app_lulu.price_cnt > 0:
 
-	time_now = datetime.date.fromtimestamp(time.time())
+	time_now = datetime.date.today()
         time_delta = datetime.timedelta(days=-31)
-        time_start = time_now + time_delta 
+        time_start = time_now + app_lulu.time_delta 
         start_date = time_start.strftime('%Y-%m-%d')
         end_date = time_now.strftime('%Y-%m-%d')
 
@@ -94,4 +89,4 @@ def error_stuff():
 
 
 if __name__ == '__main__':
-    app_lulu.run(host='0.0.0.0', port=5000)
+    app_lulu.run(port=33057)
