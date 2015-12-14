@@ -1,0 +1,29 @@
+<!doctype html>
+<title>User Input and Selections</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_lulu.css')}}'>
+<div class=page>
+  <h1>Stock Selections</h1>
+  <div class=metanav>
+
+<h4>
+Please enter stock symbol and choose type of price to graph.
+</h4>
+
+<form id='stockinfo_form' method='post' action='main_input' > <!-- action is the URL you want to move to next-->
+   <p>
+   Stock Symbol: <input type='text' name='stock_symbol' />
+   </p>
+   <p>
+   Type of prices: <br />
+   <input type='checkbox' name='prices' value='Close' /> Closing price <br />
+   <input type='checkbox' name='prices' value='Adj. Close' /> Adjusted closing price <br />
+   <input type='checkbox' name='prices' value='Open' /> Opening price <br />
+   <input type='checkbox' name='prices' value='Adj. Open' /> Adjusted opening price <br /> 
+   </p>
+   <p>
+   <input type='submit' value='SUBMIT' /> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+</div>
+</div>

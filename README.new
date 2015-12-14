@@ -1,0 +1,9 @@
+Check app_run.py for the code used:
+-Quandl python API used to grab daily stock prices for a given stock symbol from last 30 days 
+-Flask based on bev-a-tron's tutorial material
+-Bokeh used for line graph (user can choose among 4 different type of prices)
+-Basic error checking implemented 
+  *No stock symbol and/or no price selected
+  *Stock symbol can't be found in the Quandl Wiki Dataset
+
+Jeff Ouyang, 12/13/2015
