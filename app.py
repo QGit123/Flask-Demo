@@ -23,6 +23,10 @@ app_lulu.script=''
 app_lulu.div=''
 app_lulu.price_cnt=0
 
+@app_lulu.route('/')
+def main_entry():
+    return redirect('/main_input')
+
 @app_lulu.route('/main_input',methods=['GET','POST'])
 def main_input():
     if request.method == 'GET':
@@ -90,5 +94,5 @@ def error_stuff():
 
 
 if __name__ == '__main__':
-    app_lulu.run(host='0.0.0.0',port=33507)
+    app_lulu.run(port=33507)
 
