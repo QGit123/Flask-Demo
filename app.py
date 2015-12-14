@@ -16,7 +16,7 @@ app_lulu.colors = {
 }
 app_lulu.colorlist = ['Black','Red','Green','Blue']
 
-#global variables list 123456
+#global variables list 12345786
 app_lulu.vars={}
 app_lulu.stock_data=[]
 app_lulu.err_msg=''
